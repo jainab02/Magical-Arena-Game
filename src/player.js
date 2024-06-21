@@ -1,4 +1,3 @@
-
 class Player{
     constructor(name,health,strength,attack) {
         this.name = name;
@@ -7,19 +6,20 @@ class Player{
         this.attack = attack;
     }
     attackDamage(diceRoll){
-        return this.strength*diceRoll;
+        return this.attack*diceRoll;
     }
     defendingStrength(diceRoll){
         return this.strength*diceRoll;
     }
-    damageCreated(){
-        return this.attackDamage-this.defendingStrength;
+    damageCreated(attackDamage, defendingStrength) {
+        return Math.max(0, attackDamage - defendingStrength);
     }
-    healthReduced(){
-        return this.health-this.damageCreated;
+
+    reduceHealth(damage) {
+        this.health -= damage;
     }
     isPlayerAlive(){
         return this.health>0;
     }
 }
-export default Player;
+module.exports = Player;
