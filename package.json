@@ -1,0 +1,11 @@
+{
+  "name": "magical-arena-game",
+  "version": "1.0.0",
+  "description": "Survival of the fittest - Magical Arena Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jainab khatri",
+  "license": "ISC"
+}
