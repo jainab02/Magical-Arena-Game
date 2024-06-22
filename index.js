@@ -1,10 +1,31 @@
+const readline = require('readline');
 const Player = require('./src/player');
-const Dice = require('./src/dice');
 const Arena = require('./src/arena');
 
-const playerA = new Player('Player A', 50, 10, 10);
-const playerB = new Player('Player B', 50, 10, 10);
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-const dice = new Dice();
-const arena = new Arena();
-arena.fight(playerA,playerB)
+const getPlayerDetails = (playerName) => {
+    return new Promise((resolve) => {
+        rl.question(`Enter details for ${playerName} (name, health, strength, attack) separated by space: `, (input) => {
+            const [name, health, strength, attack] = input.split(' ');
+            resolve(new Player(name, parseInt(health), parseInt(strength), parseInt(attack)));
+        });
+    });
+};
+
+const main = async () => {
+    console.log("Welcome to the Magical Arena Game!");
+
+    const playerA = await getPlayerDetails('Player A');
+    const playerB = await getPlayerDetails('Player B');
+
+    const arena = new Arena();
+    arena.fight(playerA, playerB);
+
+    rl.close();
+};
+
+main();

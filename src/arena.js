@@ -1,8 +1,5 @@
 const Dice = require('./dice')
 class Arena {
-  constructor (dice) {
-    this.dice = dice
-  }
   fight (playerA, playerB) {
     const dice = new Dice()
     while (playerA.isPlayerAlive() && playerB.isPlayerAlive()) {
