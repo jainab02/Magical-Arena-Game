@@ -40,8 +40,7 @@ Player with lower health attacks first at the start of a match.
 
 ### Project Structure
 
-
-\`\`\`
+\
 magical-arena/<br>
 ├── index.js<br>
 ├── src/<br>
@@ -50,7 +49,7 @@ magical-arena/<br>
 │   ├── arena.js<br>
 └── util/<br>
     └── common.js<br>
-\`\`\`
+
 
 ### Player Attributes
 
@@ -81,6 +80,3 @@ Player A takes 40 damage, health is now 10
 Player A wins the match!
 \`\`\`
 
-### License
-
-This project is licensed under the MIT License.
