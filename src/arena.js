@@ -1,6 +1,6 @@
 const Dice = require('./dice')
 class Arena {
-  fight (playerA, playerB) {
+  battleFight (playerA, playerB) {
     const dice = new Dice()
     while (playerA.isPlayerAlive() && playerB.isPlayerAlive()) {
       this.performTurn(playerA, playerB, dice)
@@ -25,7 +25,7 @@ class Arena {
       `${attacker.name} attacks with ${attackDamage}, ${defender.name} defends with ${defendingStrength}`
     )
     console.log(
-      `${defender.name} takes ${damage} damage, health is now ${defender.health}`
+      `${defender.name} takes ${damage} damage, health is now ${defender.health > 0 ? defender.health : 0}`
     )
   }
 }
