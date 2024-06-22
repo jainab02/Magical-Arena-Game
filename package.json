@@ -4,8 +4,11 @@
   "description": "Survival of the fittest - Magical Arena Game",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "author": "Jainab khatri",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  }
 }

@@ -19,11 +19,16 @@ const inputNewPlayerDetails = async () => {
 const main = async () => {
   console.log('Welcome to the Magical Arena Game!')
 
+  console.log('Enter details for Player A:')
   const playerA = await inputNewPlayerDetails()
+  
+  console.log('Enter details for Player B:')
   const playerB = await inputNewPlayerDetails()
 
   const arena = new Arena()
   arena.battleFight(playerA, playerB)
+  const winner = playerA.isPlayerAlive() ? playerA : playerB
+  console.log(`${winner.name} wins the match!`)
   console.log('End Game, See you Again!!')
 
   closeInterface()

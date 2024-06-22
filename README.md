@@ -31,6 +31,13 @@ Player with lower health attacks first at the start of a match.
 2. Follow the prompts to enter the details for Player A and Player B.
 3. The game will simulate a battle between the two players and announce the winner.
 
+### For Unit testing
+ Running the Tests
+    ```sh
+    npm test
+    ```
+
+
 ### Project Structure
 
 
