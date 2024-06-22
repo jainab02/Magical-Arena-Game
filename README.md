@@ -8,6 +8,13 @@ Design a Magical Arena. Every Player is defined by a “health” attribute, “
 Any two player can fight a match in the arena. Players attack in turns. Attacking player rolls the attacking dice and the defending player rolls the defending dice. The “attack”  value multiplied by the outcome of the  attacking dice roll is the damage created by the attacker. The defender “strength” value, multiplied by the outcome of the defending dice is the damage defended by the defender. Whatever damage created by attacker which is in excess of the damage defended by the defender will reduce the “health” of the defender. Game ends when any players health reaches 0
 Player with lower health attacks first at the start of a match. 
 
+## Feature Added to the Game Play Rules: Defense Power
+
+In addition to the standard gameplay rules, we've added a feature where the defender's roll can negate the attacker's attack if the defense value exceeds the attack value. Here’s how it works:
+
+- **Defense Negation**: If the defender rolls a higher value on the defending dice than the attack value used by the attacker, the attack is nullified. No damage is dealt to the defender in this case.
+
+
 ## How to Run
 
 ### Prerequisites
