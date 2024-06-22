@@ -2,11 +2,17 @@ const Dice = require('./dice')
 class Arena {
   // method- battle ground for Playing the game
   battleFight (playerA, playerB) {
+    // Determine which player attacks first based on health
+    console.log("Welcome to the Battefield...")
     const dice = new Dice()
-    while (playerA.isPlayerAlive() && playerB.isPlayerAlive()) {
-      this.performTurn(playerA, playerB, dice)
-      if (playerB.isPlayerAlive()) {
-        this.performTurn(playerB, playerA, dice)
+    const attacker = playerA.health < playerB.health ? playerA : playerB;
+    const defender = attacker === playerA ? playerB : playerA;
+    console.log(`${attacker.name}, Starts the Game`)
+
+    while (attacker.isPlayerAlive() && defender.isPlayerAlive()) {
+      this.performTurn(attacker, defender, dice)
+      if (defender.isPlayerAlive()) {
+        this.performTurn(attacker, defender, dice)
       }
     }
   }
